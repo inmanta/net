@@ -1,5 +1,2 @@
-name: net
-version: 0.2
-source: git@github.com:bartv/imp-net
-license: Apache 2.0
-author: Bart Vanbrabant <bart.vanbrabant@cs.kuleuven.be>
+{author: Bart Vanbrabant <bart.vanbrabant@cs.kuleuven.be>, license: Apache 2.0, name: net,
+  source: 'git@github.com:bartv/imp-net', version: 0.2.1}
