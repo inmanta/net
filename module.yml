@@ -4,4 +4,4 @@ name: net
 source: git@git.impera.io:modules/net
 version: 0.2.4
 requires:
-    std: git@git.impera.io:modules/std, ">= 0.1"
+    std: git@git.impera.io:modules/std, >= 0.5
