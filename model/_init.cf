@@ -17,13 +17,13 @@
 """
 import std
 
-typedef mac_addr as string matching /^([0-9a-fA-F]{2})(:[0-9a-fA-F]{2}){5}$/
+typedef mac_addr as string matching /^([0-9a-fA-F]{2})(:[0-9a-fA-F]{2}){5}|$/
 
 entity Interface:
     """
         This interface models an ethernet network interface.
     """
-    mac_addr mac
+    mac_addr mac=""
     string name
 end
 
