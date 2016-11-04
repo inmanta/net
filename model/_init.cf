@@ -25,6 +25,8 @@ entity Interface:
     """
     mac_addr mac=""
     string name
+    number mtu=1500
+    bool vlan=false
 end
 
 """
