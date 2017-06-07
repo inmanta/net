@@ -36,3 +36,4 @@ std::Host host [1] -- [0:] Interface ifaces
 
 implement Interface using std::none
 
+typedef vlan_id as number matching self >= 0 and self < 4096
