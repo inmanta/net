@@ -4,13 +4,18 @@ pipeline {
     pollSCM '* * * * *'
     cron(BRANCH_NAME == "master" ? "H H(2-5) * * *": "")
   }
-  options { disableConcurrentBuilds() }
+  options {
+    disableConcurrentBuilds()
+    skipDefaultCheckout()
+  }
   parameters {
     booleanParam(name:"pytest_inmanta_dev" ,defaultValue: false, description: 'Changes the index used to install pytest-inmanta to the inmanta dev index')
   }
   stages {
     stage("setup"){
       steps{
+        cleanWs()
+        checkout scm
         script{
           sh'''
           python3 -m venv ${WORKSPACE}/env
@@ -51,7 +56,6 @@ pipeline {
         ${WORKSPACE}/env/bin/pip uninstall -y pytest-inmanta
         '''
       }
-      cleanWs()
     }
   }
 }
