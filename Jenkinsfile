@@ -51,6 +51,7 @@ pipeline {
         ${WORKSPACE}/env/bin/pip uninstall -y pytest-inmanta
         '''
       }
+      cleanWs()
     }
   }
 }
