@@ -1,5 +1,5 @@
 """
-    Copyright 2016 Inmanta
+    Copyright 2020 Inmanta
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -17,7 +17,17 @@
 """
 import std
 
-typedef mac_addr as string matching /^([0-9a-fA-F]{2})(:[0-9a-fA-F]{2}){5}|$/
+typedef mac_addr as string matching std::validate_type(
+    "pydantic.constr", self, {"regex": "^([0-9a-fA-F]{2})(:[0-9a-fA-F]{2}){5}|$", "strict": true}
+)
+"""
+    A string that only matches valid macaddresses that are colon separated.
+"""
+
+typedef vlan_id as int matching std::validate_type("pydantic.conint", self, {"ge": 0, "lt": 4096})
+"""
+    A constrained integer that represents a vlan identifier
+"""
 
 entity Interface:
     """
@@ -29,11 +39,10 @@ entity Interface:
     bool vlan=false
 end
 
+
+std::Host host [1] -- [0:] Interface ifaces
 """
     Host ethernet interface are always placed inside a host
 """
-std::Host host [1] -- [0:] Interface ifaces
 
 implement Interface using std::none
-
-typedef vlan_id as number matching self >= 0 and self < 4096
