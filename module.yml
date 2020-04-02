@@ -1,7 +1,7 @@
 author: Inmanta <code@inmanta.com>
 license: Apache 2.0
 name: net
-version: 1.0.0.dev1585826695
+version: 1.0.0
 compiler_version: 2020.1
 requires:
 - std>=1.4.0
