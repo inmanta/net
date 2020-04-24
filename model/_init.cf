@@ -40,7 +40,7 @@ entity Interface:
 end
 
 
-std::Host host [1] -- [0:] Interface ifaces
+std::Host.ifaces [0:] -- Interface.host [1]
 """
     Host ethernet interface are always placed inside a host
 """
