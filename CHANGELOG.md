@@ -1,4 +1,4 @@
-# V1.0.2
+# V1.0.3
  - Use inmanta-dev-dependencies package
 
 # V1.0.1
