@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.17 - ?
+## v1.0.17 - 2023-04-04
 
 ## v1.0.11
 - Remove pytest.ini and move its logic to pyproject.toml
