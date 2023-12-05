@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.1.0 - ?
+## v1.1.0 - 2023-12-05
 
 - Deprecate the net module
 
